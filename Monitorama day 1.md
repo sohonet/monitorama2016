@@ -1,40 +1,42 @@
-# Monitorama
+# Monitorama Day 1
 
-## Adrian Cockcroft (BV) - Monitoring Challenges
 
-Monitoring "new rules" 2014
+## [Adrian Cockcroft](https://twitter.com/adrianco), Battery Ventures - Monitoring Challenges
 
-- What problems odes monitoring address?
+[Slides](http://www.slideshare.net/adriancockcroft/monitoring-challenges-monitorama-2016-monitoringless)
+
+This talk reflected on new trends and how things have changed since Adrian talked about monitoring "new rules" in 2014
+
+What problems does monitoring address?
+
  - measuring business value (customer happiness, cost efficiency)
 
-- Why isn't it solved?
+Why isn't it solved?
 
-Lots of change, each generation have different vendors and tools.
-New vendors have new schemas, cost per node is much lower, vendors get disrupted
+- Lots of change, each generation has different vendors and tools.
+- New vendors have new schemas, cost per node is much lower each generation so vendors get disrupted
 
-event data, histogram of distributions
+Talked about serverless model - now monitorable entities only exist during execution. Leads to zipkin style distributed tracing inside the functions.
 
-faas/serverless - monitorable entities only exist during execution
-zipkin style tracing inside the functions
+Current Monitoring Challenges:
 
-Challenges:
-
-- too much new stuff
-- too ephemeral
-- price disruption
+- There's too much new stuff
+- Monitored entities are too ephemeral
+- Price disruption in compute resources - how can you make money from monitoring it?
  
-## Greg Poirier (Opsee?) - Monitoring is Dead
+## [Greg Poirier](https://twitter.com/grepory), Opsee - Monitoring is Dead
 
-History of monitoring
+[References](https://github.com/grepory/monitorama2016)
+
+Greg gave a history and definition of monitoring, and argued that how we think about monitoring needs to change.
+
+Historically monitoring is about taking a single thing in isolation and making assertions about it.
 
 - resource utilisation, process aliveness, system aliveness
 - thresholds
 - timeseries
 
-Taking a single thing in isolation and making assertions about it.
-
-----
-^ a line in the sand
+Made a defintion of monitoring:
 
 Observability: A system is observable if you can determine the behaviour of the system based on it's outputs
 
@@ -42,21 +44,25 @@ Behaviour: Manner in which a system acts
 
 Outputs: Concrete results of it's behaviours
 
-sensors emit data
-agents interprets data
+Sensors: Emit data
 
-Monitoring is the action of observing and checking the bahaviour and outputs of a system and its components over time
+Agents: Interpret data
 
-Distributed system failures - responds too slowly, fails to respond.
-Service Level Objectives - can it respond in a certain time, handle a certain throughput, better health checks
+*Monitoring is the action of observing and checking the bahaviour and outputs of a system and its components over time*
 
-Understand Problems (of distributed systems), Build better tools (event correlation!)
+Failures in distributed systems are now: responds too slowly, fails to respond.
 
-## Nicole Forsgren - How Metrics Shape Your Culture
+Monitoring should now be about Service Level Objectives - can it respond in a certain time, handle a certain throughput, better health checks
 
-Measurement is culture. Somethings to talk about, across silos/boundaries
+We need to better Understand Problems (of distributed systems), and to Build better tools (event correlation particularly)
 
-Good ideas must be able to seek an objective test. Everyone must be able to experiment, learn and iterate. For innovation to flourish, measurement must rule. - Ferg Linden
+## [Nicole Forsgren](https://twitter.com/nicolefv), Chef - How Metrics Shape Your Culture
+
+[Slides](http://www.slideshare.net/nicolefv/2016-metricsasculture)
+
+Measurement is culture. Something to talk about, across silos/boundaries
+
+Good ideas must be able to seek an objective test. Everyone must be able to experiment, learn and iterate. For innovation to flourish, measurement must rule. - Greg Linden
 
 Data over opinions
 
@@ -65,16 +71,14 @@ You can't improve what yu don't measure. Always measure things that matter. That
 Metrics inform incentives, shape behaviour:
 
 - Give meaningful names
-- define well
-- communicate them across boundaries
+- Define well
+- Communicate them across boundaries
 
-O'Reilly -Data Driven
+## [Cory Watson](https://twitter.com/gphat), Stripe - Building a Culture of Observability at Stripe
 
-## Cory Watson (Stripe) - Building a Culture of Observability at Stripe
+To create a culture of observability, how can we get others to agree and work toward it?
 
-What can we get others to agree and work toward it?
-
-Where to begin? Spend time with the tools, improve if possible, replace if not, leverage past knowledge
+Where to begin? Spend time with the tools, improve if possible, replace if not, leverage past knowledge of teams
 
 Empathy - People are busy, doing best with what they have, help people be great at their jobs
 
@@ -82,7 +86,7 @@ Nemawashi - Move slowly. Lay a foundation and gather feedback. (Write down and a
 
 Identify Power Users - Find interested parties, give them what they need, empower them to help others
 
-What are you improving? How do yu measure it?
+What are you improving? How do you measure it?
 
 Get started. Be willing to do the work, shave the preposterous line of yaks. Strike when opportunies arise (incidents). Stigmergy - how uncordinated systems work together.
 
@@ -90,128 +94,118 @@ Advertise - promote accomplishments, and accomplishment of others.
 
 Alerts with context - link to info, runbooks etc. Get feedback on alerts, was it useful?
 
-Start small, seek feedback, think on your value, measure effectiveness
+Start small, seek feedback, think about your value, measure effectiveness
 
-## Kelsey Hightower (GCP) - /healthz
+## [Kelsey Hightower](https://twitter.com/kelseyhightower), Google - /healthz
+
+Kelsey gave a demo of the /healthz pattern, and how that can protect you from deploying non-functional software on a platform that can leverage internal health checks.
 
 Stop reverse engineering apps and start monitoring from the inside
 
-health/db checks and functional/smoke tests inside app
+Move health/db checks and functional/smoke tests inside app, and expose over a HTTP endpoint
 
 Ops need to move closer to the application.
 
-## Brian Smith (Facebook) - The Art of Performance Monitoring
+## Brian Smith, Facebook - The Art of Performance Monitoring
+
+Gave an overview of some of the guiding ideas behind monitoring at facebook
 
 Bad stuff:
 
-High Cardinality - same notifications for 100x machines
+- High Cardinality - same notifications for 100x machines
+- Reactive Alarms - alarms which are no londer relevant
+- Tool Fatigure - too few/too many
 
-Reactive Alarms - alarms which are no londer relevant
+It can Mechanical, Simple and Obvious to do these things at the time. But the cumulative effect is a thing thats hard to maintain.
 
-Tool Fatigure - too few/too many
-
-Mechanical, Simple and Obvious to do these things. Cumulative effect is a thing thats hard to maintain.
-
-Good Alarms:
+Properties of Good Alarms:
 
 - Signal
-- Actionabulity
+- Actionability
 - Relevancy
 
-Your Dashboards are a debugger - metrics are debugger in prod
+Your Dashboards are a debugger - metrics are debugger in production.
 
-## Caitie McCaffrey - Tackling Alert Fatigue
+## [Caitie McCaffrey](https://twitter.com/caitie), Twitter - Tackling Alert Fatigue
 
-When alerts ae more often false than true.. densensitises ppl to alerts
+[Slides](https://speakerdeck.com/caitiem20/tackling-alert-fatigue) | [References](http://github.com/caitiem20/monitorama2016)
 
-Unhappy customers is result but they are also unplanned work, distraction
+When alerts ae more often false than true, people are desensitised to alerts.
 
-IN hospitals:
+Unhappy customers is the result, but they are also unplanned work, and a distraction from focusing on your core business.
 
-- increase thresholds
-- only crisis alarms would emit audible aleters
-- nursing staff required to tune false positive alerts
+Same problem experienced by nurses responding to alarms in hospitals. What they have done:
 
-What they did:
+- Increase thresholds
+- Only crisis alarms would emit audible aleters
+- Nursing staff required to tune false positive alerts
 
-- Runbook and alert audits - run books for alerts, templated, single page for all alerts, each altert has customer impact and remediation steps. also notification steps!
+What Caitie's team did:
+
+- Runbook and alert audits - ensure ther eare runbooks for alerts, templated, single page for all alerts, each alert has customer impact and remediation steps. Importantly, also includes notification steps.
 
 - Empower oncall - tune alert thresholds, delete alerts or re-time them (only alert during business hours)
 
 - Weekly on-call retro - handoff ongoing issues, review alerts, schedule work to improve on-call
 
-Less alerts, improved visibility on systems that alert a lot.
+This resuted in less alerts, and improved visibility on systems that alert a lot.
 
-Prevention:
+To prevent alert fatigue:
 
 - Critical alerts need to be actionable
 - Do not alert on machine specific metrics
 - Tech lead or Eng manager should be on call
 
-http://github.com/caitiem20/monitorama2016
+## [Mark Imbriaco](https://twitter.com/markimbriaco), Operable - Human Scale Systems
 
-## Mark Imbriaco (Operable) - Human Scale Systems
+It's common to say now that "Tools don't matter" ... but they do. We sweat the details of our tools because they matter. All software is horrible.
 
-"Tools don't matter" ... but they do
-We sweat the details because they matter
-All software is horrible
+We operate in a complex Socio-Technical System. Human practitioners are the adaptable element of complex systems.
 
-Complex Socio-Technical System
+Make sure you think about the interface and interactions (human - software interactions)
 
-Human practitioners are the adaptable element of complex systems
+- Think about the intent, what problem are you likely to be solving (use cases)
+- Consistency is really important
+- Will it blend - how does it interact with other systems
+- Consider state of mind - high intensity situations/ tired operators
 
-Thing about the interface and interactions (human - software interactions)
+## [Sarah Hagan](https://twitter.com/thesarahhagan), Redfin - Going for Brokerage: People analytics at Redfin
 
-- think about the intent, what problem are you likely to be solving (use cases)
-- consistency is really important
-- will it blend - how does it interact with other systems
-- consider state of mind - high intensity situations/ tired operators
-
-## Sarah Hagan (Redfin) - Going for Brokerage: People analytics at Redfin
-
-Redfin - Online Estate Agents w/ agents on ground
+Redfin is an online Estate Agency with agents on ground
 
 Monitoring hiring
 
-- lots of data on the market
-- where should we move?
+- Capture lots of data on the market
+- Where should we move?
 - How many staff should we have in each location?
 - Useful tooling for the audience
-- Employees rather than constractors, analyse housing data to make sure employyes earn enough to be attracted
+- Hire employees rather than contractors, analyse sold house price data to make sure employees earn enough vs. commission agents
 
 Monitoring employees
 
-- customer reviews for agents
-- agents paid based on rating
-- let the customer monitor the business
-- monitor loading capacity of agents
+- Customer reviews for agents
+- Agents paid based on rating
+- Let the customer monitor the business
+- Monitor loading capacity of agents
 
 Monitoring culture
 
-- internal forums for feedback on tooling. (ticketing system???!!!??)
+- Internal forums for feedback on tooling.
 
 
-## Pete Cheslock (Threat Stack) - Everything @obfuscurity Taught Me About Monitoring
+## [Pete Cheslock](https://twitter.com/petecheslock), Threat Stack - Everything [@obfuscurity](https://twitter.com/obfuscurity) Taught Me About Monitoring
 
-Threat Stack - v. like CISE
+[Slides](http://www.slideshare.net/petecheslock/everything-obfuscurity-taught-me-about-monitoring)
 
-- Old monitoring systems are funny now
-- Scale up nodes, same tooling
+Told the story of his history of learning about monitoring, and how he has approached monitoring problems at his current startup.
 
-- Telemetry and Alerting system is not core competancy
-- Do simple things early when it makes sense (metrics in logs)
-- Do simple things to get more data when necessary (use librato)
+Telemetry and Alerting system is not core competancy.
 
-Hosted TSDB is useful and just works, but there a faster non-durable metrics which are important
+- Do simple things early when it makes sense (put metrics in logs). 
+- When it's necessary to get more data - just buy something.
+- Hosted TSDB is useful and just works, but there a faster non-durable metrics which are important. So he used graphite for 10s interval metrics, with 2 collectd processes writing to two outputs
+- Ended up with a full graphite deployment
 
-"Just use graphite"
-
-2 collectds metrics to 2 places
-
-End up with full graphite deployment
-
-- Community Mattters
-- Relationships Matter
 
 
 
