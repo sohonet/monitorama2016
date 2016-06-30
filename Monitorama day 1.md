@@ -3,7 +3,7 @@
 
 ## [Adrian Cockcroft](https://twitter.com/adrianco), Battery Ventures - Monitoring Challenges
 
-[Slides](http://www.slideshare.net/adriancockcroft/monitoring-challenges-monitorama-2016-monitoringless)
+[Slides](http://www.slideshare.net/adriancockcroft/monitoring-challenges-monitorama-2016-monitoringless) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=35m55s)
 
 This talk reflected on new trends and how things have changed since Adrian talked about monitoring "new rules" in 2014
 
@@ -26,7 +26,7 @@ Current Monitoring Challenges:
  
 ## [Greg Poirier](https://twitter.com/grepory), Opsee - Monitoring is Dead
 
-[References](https://github.com/grepory/monitorama2016)
+[References](https://github.com/grepory/monitorama2016) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=72m15s)
 
 Greg gave a history and definition of monitoring, and argued that how we think about monitoring needs to change.
 
@@ -58,7 +58,7 @@ We need to better Understand Problems (of distributed systems), and to Build bet
 
 ## [Nicole Forsgren](https://twitter.com/nicolefv), Chef - How Metrics Shape Your Culture
 
-[Slides](http://www.slideshare.net/nicolefv/2016-metricsasculture)
+[Slides](http://www.slideshare.net/nicolefv/2016-metricsasculture) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=110m22s)
 
 Measurement is culture. Something to talk about, across silos/boundaries
 
@@ -75,6 +75,8 @@ Metrics inform incentives, shape behaviour:
 - Communicate them across boundaries
 
 ## [Cory Watson](https://twitter.com/gphat), Stripe - Building a Culture of Observability at Stripe
+
+[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=159m03s)
 
 To create a culture of observability, how can we get others to agree and work toward it?
 
@@ -98,6 +100,8 @@ Start small, seek feedback, think about your value, measure effectiveness
 
 ## [Kelsey Hightower](https://twitter.com/kelseyhightower), Google - /healthz
 
+[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=196m50s)
+
 Kelsey gave a demo of the /healthz pattern, and how that can protect you from deploying non-functional software on a platform that can leverage internal health checks.
 
 Stop reverse engineering apps and start monitoring from the inside
@@ -107,6 +111,8 @@ Move health/db checks and functional/smoke tests inside app, and expose over a H
 Ops need to move closer to the application.
 
 ## Brian Smith, Facebook - The Art of Performance Monitoring
+
+[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=279m50s)
 
 Gave an overview of some of the guiding ideas behind monitoring at facebook
 
@@ -128,7 +134,7 @@ Your Dashboards are a debugger - metrics are debugger in production.
 
 ## [Caitie McCaffrey](https://twitter.com/caitie), Twitter - Tackling Alert Fatigue
 
-[Slides](https://speakerdeck.com/caitiem20/tackling-alert-fatigue) | [References](http://github.com/caitiem20/monitorama2016)
+[Slides](https://speakerdeck.com/caitiem20/tackling-alert-fatigue) | [References](http://github.com/caitiem20/monitorama2016) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=307m09s)
 
 When alerts ae more often false than true, people are desensitised to alerts.
 
@@ -158,6 +164,8 @@ To prevent alert fatigue:
 
 ## [Mark Imbriaco](https://twitter.com/markimbriaco), Operable - Human Scale Systems
 
+[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=348m33s)
+
 It's common to say now that "Tools don't matter" ... but they do. We sweat the details of our tools because they matter. All software is horrible.
 
 We operate in a complex Socio-Technical System. Human practitioners are the adaptable element of complex systems.
@@ -170,6 +178,8 @@ Make sure you think about the interface and interactions (human - software inter
 - Consider state of mind - high intensity situations/ tired operators
 
 ## [Sarah Hagan](https://twitter.com/thesarahhagan), Redfin - Going for Brokerage: People analytics at Redfin
+
+[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=395m50s)
 
 Redfin is an online Estate Agency with agents on ground
 
@@ -195,7 +205,7 @@ Monitoring culture
 
 ## [Pete Cheslock](https://twitter.com/petecheslock), Threat Stack - Everything [@obfuscurity](https://twitter.com/obfuscurity) Taught Me About Monitoring
 
-[Slides](http://www.slideshare.net/petecheslock/everything-obfuscurity-taught-me-about-monitoring)
+[Slides](http://www.slideshare.net/petecheslock/everything-obfuscurity-taught-me-about-monitoring) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=428m04s)
 
 Told the story of his history of learning about monitoring, and how he has approached monitoring problems at his current startup.
 
