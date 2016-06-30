@@ -1,33 +1,42 @@
 # Monitorama Day 2
 
 
-## [Brian Overstreet](), Pinterest - Scaling Pinterest's Monitoring
+## Brian Overstreet, Pinterest - Scaling Pinterest's Monitoring
+
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=26m40s)
 
 Started with Ganglia, Pingdom
-Deployed Graphite, single box
-2nd arch - LB, 2x relay, multiple cache/web boxes etc.
 
-* UDP packet receive errors
+Deployed Graphite, single box
+
+Second Graphite architecture - Load Balancer, 2x relay servers, multiple cache/web boxes etc.
+
+Suffered lots of UDP packet receive errors
+
 Put statsd everywhere
+
 - fixed packet loss, unique metric names per host
 - latency only per host, too many metrics
 
 Sharded statsd
+
 - not unique per host now,
 - shard mapping in client, client version needs to be same everywhere
 
 Multiple graphite clusters - one per application (python/java)
+
 More maintenance, more routing rules etc.
 
 Problems with reads, multiple glob searches can be slow
 
-
 Deployed OpenTSDB
 
 Replace statsd
+
 - local metrics agent, kafka, storm - send to graphite/opentsdb
 
 Metrics-agent:
+
 - interface for opentsdb and statsd
 - sends metrics to kafka
 - processed by storm
@@ -39,20 +48,24 @@ Create statsboard - integrates graphite and opentsdb for dashboards and alerts
 Graphite User Education - underlying info about how metrics are collected, precision, aggregation etc.
 
 Protect System from Clients 
+
 - alert on unique metrics
 - block metrics using zookeeper and shared blacklist (created on fly)
 
 Lessen Operational Overhead
+
 - more tools, more overhead
 - more monitoring systems, more monitoring of the monitoring system
 - removing a tool in prod is hard
 
 Set expectations
+
 - data has a lifetime
 - not magical data warehouse tool that returns data instantly
 - not all metrics will be efficient
 
 Summary:
+
 - match monitoring system to where the company is at
 - user editation is key to scale tools organizationally
 - tools scale with the number of engineers, not users
@@ -60,69 +73,70 @@ Summary:
 
 ## [Emily Nakashima](https://twitter.com/eanakashima), Bugsnag - What your javascript does when you're not around
 
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=61m27s)
+
 Lots of app moving to frontend, so running in browser not on backend servers
 
-Toolkit
+Toolkit:
  
-- capture load performane from browser, send to app server, use statsd + grafana & google analytics
+- capture load performance from browser, send to app server, use statsd + grafana & google analytics
 - capture uncaught exections in the browser, using their own product
-
-Log events, not just errors
 
 Sorry, Javascript is just not that relevant in my line of work
 
 ## [Eron Nicholson](https://twitter.com/vinzclortho) and [Noah Lorang](https://twitter.com/noahhlo), Basecamp - CHICKEN and WAFFLES: Identifying and Handling Malice
 
-FIrst rule of DDoS club is you don't talk about DDoS club
+[Slides](https://github.com/sohonet/monitorama2016/blob/master/Chicken%20and%20Waffles%20-%20Monitorama%202016.pdf) | [Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=105m52s)
 
-Suffered DDoS abd blackmail. 80 gigabits - DNS reflection, NTP reflection, SYN floods, ICMP flood
+
+Suffered DDoS and blackmail. 80 gigabits - DNS reflection, NTP reflection, SYN floods, ICMP flood
 
 Defense and Mitigation:
-- dc partner filter for us
-- more 10G circuits and routers
-- arrangements with vendors to provide emergency access and other mitigation tools
 
-Get serious about more subtle application level attacks
-- voln scanners
+- DC partner filters for them
+- More 10G circuits and routers
+- Arrangements with vendors to provide emergency access and other mitigation tools
+
+Experience got them serious about more subtle application level attacks:
+
+- vulnerability scanners
 - repeat slow page requests
-- brute force attemps
+- brute force attempts
 - nefarious crawlers
-
-Evaluated commercial hardware appliance, attack signatures it know weren't relevant
 
 What do we want from a defense system?
 
-1. Protection against applicaiton-level attacks
-2. Keep user access uninterupted
+1. Protection against application-level attacks
+2. Keep user access uninterrupted
 3. Take advantage of the data we have available
 4. Transparent in what gets blocked and why
 
 Chicken: who is a real user and who is malicious?
 
-ML classification. Problems: really hard to get a good training set. need to be able to explain why an IP was blocked.
+Considered Machine Learning classification. Problems: really hard to get a good training set. Need to be able to explain why an IP was blocked.
 
 Simpler approach: 
 
-- some behaviours are known to be from people up to know good. crawling phpmyadmin, path reversal, repeated failed login attempts etc.
+- Some behaviours are known to be from people up to no good. crawling phpmyadmin, path reversal, repeated failed login attempts etc.
 - Request history gives a good idea of whether someone is a normal user, broken script or a malicious actor.
 - External indicators: geoip databases, badip dbs, facebook threat exchange
 
-Removing simple things reduces noise. Every incoming request is scored and per-IP aggregate score calculated based on return code. Create EWMA from that data. About 12% had negative reputation.
+Removing simple things reduces noise. Every incoming request is scored and per-IP aggregate score calculated based on return code. Create Exponentially Weighted Moving Average from that data. About 12% had negative reputation.
 
-Scaning for blackable actions and scoring requests in near real-time using request byproducts.
+Scaning for blockable actions and scoring requests in near real-time using request byproducts.
 
-Request logs, netflow data, threat exchange -> kafka -> request scoring, scanner for known bad bahaviour, tools for manual evaluation
+Request logs, netflow data, threat exchange -> kafka -> request scoring, scanner for known bad bahaviour, tools for manual evaluation.
 
-Average IP reputation gives an early indicator to monitor for app level attack.
+Average IP reputation gives an early indicator to monitor for application level attack.
 
 Provides list of good, bad, and dubious IPs.
 
 Enforcement:
 
 - originally provided by iptables rules on haproxy hosts
-- rule on loadbalancer
-- null route on routers
-- waffles
+- then tried rule on loadbalancer
+- then tried null routing on routers
+- finally created waffles
 
 Using BGP flowspec to send data from routers to waffles, which then decides what path to take: error, app or challenge. Waffles host live in a seperate network with limited access. 
 
@@ -130,16 +144,20 @@ Waffles is redis and nginx.
 
 ## [John Stanford](https://twitter.com/jxstanford), Solinea - Fake It Until You Make It
 
-(Need to re-watch because I didn't unsetstand the point????_
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=149m25s)
 
-Monitoring an openstack cluster, 1 controller adn 4 compute nodes, going to elasticsearch. Sizing your monitoring.
 
+Monitoring an openstack cluster, 1 controller and 6 compute nodes, taking logs with heja and sending it to elasticsearch. Can I scale this up to a thousand nodes? How big can it get?
+
+How do you go about figuring that out?
+
+- took 7 days of logs from lab, 25k messages/hr
 - number of logs coming from a node
 - number of logs coming from a component
 - 7 day message rate, look at histograms, identifies recurring outlier
 - message size, percentiles of payload size
 
-What models look like what we're doing for simulation. Add some random noise.
+What models look like what we're doing for simulation? Add some random noise.
 
 Flood process, monitoring everything, repeat until it breaks. System sustained 4k x 1k messages/sec, started to pause above that, but no messages were dropped.
 
@@ -150,33 +168,36 @@ Next steps:
 
 ## [Tammy Butow](https://twitter.com/tammybutow), Dropbox - Database Monitoring at Dropbox
 
+[Slides](https://paper.dropbox.com/doc/Database-Monitoring-at-Dropbox--0JUfRc532EeRDAc1aPYCv) | [Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=177m37s)
+
+
 Achieving any goal requires honest and regular monitoring of your progress.
 
-originally used nagios, thruk (web ui) and ganglia
-created own tool vortex in 2013
+Originally used nagios, thruk (web ui) and ganglia
 
-why create in house monitogin?
+Created own tool vortex in 2013
+
+why create in house monitoring?
+
 - performance, reliability iissues, scaling number of metrics fast
 
-vortex: TSB with dashboards, alerting, aggregation
-- metric metadata, tag a metric with lots of attributes
+Create Vortex: 
 
-monthra: single way of schulding and relay metrics, discourage scheduling with cron
+- Time Series Database with dashboards, alerting, aggregation
+- Rich metric metadata, tag a metric with lots of attributes
 
-db monitoring is reactive and proactive: proactive: spike in workload, get a page.
-
-Core OS level metrics.
+Monthra: single way of scheduling and relaying metrics, discourage scheduling with cron
 
 Service Metrics:
 - what durability, reliability goals? align monitoring to goals?
 - threads running/ threads connected
 
-Monthly Metrics Review!!
+Run a Monthly Metrics Review (great idea)
 
 
 ## [Dave Josephsen](https://twitter.com/davejosephsen), Librato - 5 Lines I couldn't draw
 
-pain shit perl.. dont send it just count them
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=303m04s)
 
 1. Making cofnitive leap to use monitoring tools to recognise system behaviour independent of alerting. misapprehension about what monitoring was and whom it was for.
 
@@ -186,9 +207,11 @@ pain shit perl.. dont send it just count them
 
 4. Effective monitoring can bring about cultural change, how people interact between each other.
 
-5. ??? isn't that the same point
+5. Repeated point 4
 
 ## [Jessie Frazelle](https://twitter.com/jessfraz), Google - Everything is broken
+
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=333m21s)
 
 Talked about problems with Software Engineering and Operations
 
@@ -196,15 +219,18 @@ Demonstrated how they monitored community and external maintainer PR statistics 
 
 ## [James Fryman](https://twitter.com/jfryman), Auth0 - Metrics are for Chumps - Understanding and overcoming the roadblocks to implementing instrumentation
 
-Story of implementation of instrumentation at Auto0
+[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=385m10s)
 
-Wanted data driven conversations. Metircs implementation happened in past, was ripped out because not well understood, though to cause latency. Created adversions.
+Story of implementation of instrumentation at Auth0
+
+Wanted data driven conversations. Metrics implementation happened in past, was ripped out because not well understood, thought to cause latency. Created adversions.
 
 Make the chase. Get buy-in.
 
 To have good decent conversations with someone you need to have metrics. 
 
 Pushback:
+
 - Not the most important feature - but it is!
 - Cannot start until we understand the data retention requirements - premature optimisations
 - We don't run a SaaS - need to understand what your software is doing regardless
@@ -220,4 +246,3 @@ Keep in sync with developers - change is difficult and there will be resistance,
 Build out data flows, find potention choke points in system, take a baseline measurement, check systems in isolation
 
 Fix and Repair bottlenecks. Solved 3 major bottlenecks, went from 500 to 10k RPS.
-
