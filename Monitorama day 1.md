@@ -3,7 +3,7 @@
 
 ## [Adrian Cockcroft](https://twitter.com/adrianco), Battery Ventures - Monitoring Challenges
 
-[Slides](http://www.slideshare.net/adriancockcroft/monitoring-challenges-monitorama-2016-monitoringless) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=35m55s)
+[Slides](http://www.slideshare.net/adriancockcroft/monitoring-challenges-monitorama-2016-monitoringless) | [Video](https://vimeo.com/173609948)
 
 This talk reflected on new trends and how things have changed since Adrian talked about monitoring "new rules" in 2014
 
@@ -26,7 +26,7 @@ Current Monitoring Challenges:
  
 ## [Greg Poirier](https://twitter.com/grepory), Opsee - Monitoring is Dead
 
-[References](https://github.com/grepory/monitorama2016) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=72m15s)
+[References](https://github.com/grepory/monitorama2016) | [Video](https://vimeo.com/173610062)
 
 Greg gave a history and definition of monitoring, and argued that how we think about monitoring needs to change.
 
@@ -58,7 +58,7 @@ We need to better Understand Problems (of distributed systems), and to Build bet
 
 ## [Nicole Forsgren](https://twitter.com/nicolefv), Chef - How Metrics Shape Your Culture
 
-[Slides](http://www.slideshare.net/nicolefv/2016-metricsasculture) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=110m22s)
+[Slides](http://www.slideshare.net/nicolefv/2016-metricsasculture) | [Video](https://vimeo.com/173607646)
 
 Measurement is culture. Something to talk about, across silos/boundaries
 
@@ -76,7 +76,7 @@ Metrics inform incentives, shape behaviour:
 
 ## [Cory Watson](https://twitter.com/gphat), Stripe - Building a Culture of Observability at Stripe
 
-[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=159m03s)
+[Video](https://vimeo.com/173610034)
 
 To create a culture of observability, how can we get others to agree and work toward it?
 
@@ -100,7 +100,7 @@ Start small, seek feedback, think about your value, measure effectiveness
 
 ## [Kelsey Hightower](https://twitter.com/kelseyhightower), Google - /healthz
 
-[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=196m50s)
+[Video](https://vimeo.com/173610242)
 
 Kelsey gave a demo of the /healthz pattern, and how that can protect you from deploying non-functional software on a platform that can leverage internal health checks.
 
@@ -112,7 +112,7 @@ Ops need to move closer to the application.
 
 ## Brian Smith, Facebook - The Art of Performance Monitoring
 
-[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=279m50s)
+[Video](https://vimeo.com/173609989)
 
 Gave an overview of some of the guiding ideas behind monitoring at facebook
 
@@ -134,7 +134,7 @@ Your Dashboards are a debugger - metrics are debugger in production.
 
 ## [Caitie McCaffrey](https://twitter.com/caitie), Twitter - Tackling Alert Fatigue
 
-[Slides](https://speakerdeck.com/caitiem20/tackling-alert-fatigue) | [References](http://github.com/caitiem20/monitorama2016) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=307m09s)
+[Slides](https://speakerdeck.com/caitiem20/tackling-alert-fatigue) | [References](http://github.com/caitiem20/monitorama2016) | [Video](https://vimeo.com/173704290)
 
 When alerts ae more often false than true, people are desensitised to alerts.
 
@@ -164,7 +164,7 @@ To prevent alert fatigue:
 
 ## [Mark Imbriaco](https://twitter.com/markimbriaco), Operable - Human Scale Systems
 
-[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=348m33s)
+[Video](https://vimeo.com/173607645)
 
 It's common to say now that "Tools don't matter" ... but they do. We sweat the details of our tools because they matter. All software is horrible.
 
@@ -179,7 +179,7 @@ Make sure you think about the interface and interactions (human - software inter
 
 ## [Sarah Hagan](https://twitter.com/thesarahhagan), Redfin - Going for Brokerage: People analytics at Redfin
 
-[Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=395m50s)
+[Video](https://vimeo.com/173610283)
 
 Redfin is an online Estate Agency with agents on ground
 
@@ -205,7 +205,7 @@ Monitoring culture
 
 ## [Pete Cheslock](https://twitter.com/petecheslock), Threat Stack - Everything [@obfuscurity](https://twitter.com/obfuscurity) Taught Me About Monitoring
 
-[Slides](http://www.slideshare.net/petecheslock/everything-obfuscurity-taught-me-about-monitoring) | [Video](https://www.youtube.com/watch?v=l-w2skD_56E&t=428m04s)
+[Slides](http://www.slideshare.net/petecheslock/everything-obfuscurity-taught-me-about-monitoring) | [Video](https://vimeo.com/173607648)
 
 Told the story of his history of learning about monitoring, and how he has approached monitoring problems at his current startup.
 

@@ -3,6 +3,9 @@
 
 ## [Justin Reynolds](https://twitter.com/jrsquared), Netflix - Intuition Engineering at Netflix
 
+[Video](https://vimeo.com/173607639) 
+
+
 Discussed problems at Netflix that regions were siloed, they worked on serving users out of any region.
 
 To fail regions, need to scale up other regions to server all traffic
@@ -13,7 +16,7 @@ Created vizceral - see the blog post for screenshots & video: [http://techblog.n
 
 ## Brian Brazil, Robust Perceiver - Prometheus
 
-[Slides](http://www.slideshare.net/brianbrazil/prometheus-monitorama-2016)
+[Slides](http://www.slideshare.net/brianbrazil/prometheus-monitorama-2016) | [Video](https://vimeo.com/173704322)
 
 Prometheus is a TSDB offering 'whitebox monitoring' for looking inside applications. supports labels, alerting and graphing are unified, using the same language.
 
@@ -29,11 +32,13 @@ Data stored as file per database on disk, not round-robin - stores all data with
 
 ## [Torkel Ödegaard](https://twitter.com/torkelo), Raintank - Grafana Master Class
 
+[Video](https://vimeo.com/173607651)
+
 Gave a demo on how to use grafana, as well as recently added and future features.
 
 ## [Katherine Daniels](https://twitter.com/beerops), Etsy - How to Teach an Old Monitoring System New Tricks
 
-[Slides](https://speakerdeck.com/kdaniels/teaching-an-old-monitoring-system-new-tricks)
+[Slides](https://speakerdeck.com/kdaniels/teaching-an-old-monitoring-system-new-tricks) | [Video](https://vimeo.com/173607641)
 
 Old Monitoring System == Nagios
 
@@ -60,7 +65,7 @@ An On Call bedtime story
 
 ## [Joe Damato](https://twitter.com/joedamato), packagecloud.io - All of Your Network Monitoring is (probably) Wrong
 
-[Slides](http://blog.packagecloud.io/eng/2016/06/29/monitorama-2016-all-of-your-network-monitoring-is-probably-wrong/)
+[Slides](http://blog.packagecloud.io/eng/2016/06/29/monitorama-2016-all-of-your-network-monitoring-is-probably-wrong/) | [Video](https://vimeo.com/173610178)
 
 There's too much stuff to know about
 
@@ -84,7 +89,7 @@ Properly monitoring and setting alerts requires significant investment.
 
 ## [Megan Kanne](https://twitter.com/megankanne), [Justin Nguyen](https://twitter.com/justanguyen), and [Dan Sotolongo](https://twitter.com/sortalongo), Twitter - Building Twitter’s Next-Gen Alerting System
 
-[Slides](https://docs.google.com/presentation/d/1K4e7uB0wBzrlq5EctCvWEyok0gTOz-1Sh9Ya-o6NeRw/edit)
+[Slides](https://docs.google.com/presentation/d/1K4e7uB0wBzrlq5EctCvWEyok0gTOz-1Sh9Ya-o6NeRw/edit) | [Video](https://vimeo.com/173607647)
 
 3.5B metrics per minute
 
@@ -119,6 +124,8 @@ Lessons Learned
 
 ## [Joey Parsons](https://twitter.com/joeyparsons), Airbnb - Monitoring and Health at Airbnb
 
+[Video](https://vimeo.com/173704175)
+
 Perfers to buy stuff:
 
 - New Relic
@@ -151,7 +158,7 @@ Dashboards for:
 
 ## [Heinrich Hartmann](https://twitter.com/heinrichhartman), Circonus - Statistics for Engineers
 
-[Slides](http://www.slideshare.net/HeinrichHartmann/statistics-for-engineers-63589022)
+[Slides](http://www.slideshare.net/HeinrichHartmann/statistics-for-engineers-63589022) | [Video](https://vimeo.com/173610069)
 
 Monitoring Goals
 
@@ -186,6 +193,8 @@ Can be aggregated across times. Can be visualised as heatmaps.
 
 
 ## John Banning, Google - Monarch, Google’s Planet-Scale Monitoring Infrastructure
+
+[Video](https://vimeo.com/173607638)
 
 Huge volume, global span, many teams - constant change
 

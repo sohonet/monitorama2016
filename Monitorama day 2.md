@@ -3,7 +3,7 @@
 
 ## Brian Overstreet, Pinterest - Scaling Pinterest's Monitoring
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=26m40s)
+[Video](https://vimeo.com/173704315)
 
 Started with Ganglia, Pingdom
 
@@ -73,7 +73,7 @@ Summary:
 
 ## [Emily Nakashima](https://twitter.com/eanakashima), Bugsnag - What your javascript does when you're not around
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=61m27s)
+[Video](https://vimeo.com/173610415)
 
 Lots of app moving to frontend, so running in browser not on backend servers
 
@@ -86,7 +86,7 @@ Sorry, Javascript is just not that relevant in my line of work
 
 ## [Eron Nicholson](https://twitter.com/vinzclortho) and [Noah Lorang](https://twitter.com/noahhlo), Basecamp - CHICKEN and WAFFLES: Identifying and Handling Malice
 
-[Slides](https://github.com/sohonet/monitorama2016/blob/master/Chicken%20and%20Waffles%20-%20Monitorama%202016.pdf) | [Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=105m52s)
+[Slides](https://github.com/sohonet/monitorama2016/blob/master/Chicken%20and%20Waffles%20-%20Monitorama%202016.pdf) | [Video](https://vimeo.com/173704281)
 
 
 Suffered DDoS and blackmail. 80 gigabits - DNS reflection, NTP reflection, SYN floods, ICMP flood
@@ -144,7 +144,7 @@ Waffles is redis and nginx.
 
 ## [John Stanford](https://twitter.com/jxstanford), Solinea - Fake It Until You Make It
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=149m25s)
+[Video](https://vimeo.com/173610212)
 
 
 Monitoring an openstack cluster, 1 controller and 6 compute nodes, taking logs with heja and sending it to elasticsearch. Can I scale this up to a thousand nodes? How big can it get?
@@ -168,7 +168,7 @@ Next steps:
 
 ## [Tammy Butow](https://twitter.com/tammybutow), Dropbox - Database Monitoring at Dropbox
 
-[Slides](https://paper.dropbox.com/doc/Database-Monitoring-at-Dropbox--0JUfRc532EeRDAc1aPYCv) | [Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=177m37s)
+[Slides](https://paper.dropbox.com/doc/Database-Monitoring-at-Dropbox--0JUfRc532EeRDAc1aPYCv) | [Video](https://vimeo.com/173607649)
 
 
 Achieving any goal requires honest and regular monitoring of your progress.
@@ -197,7 +197,7 @@ Run a Monthly Metrics Review (great idea)
 
 ## [Dave Josephsen](https://twitter.com/davejosephsen), Librato - 5 Lines I couldn't draw
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=303m04s)
+[Video](https://vimeo.com/173610048)
 
 1. Making cofnitive leap to use monitoring tools to recognise system behaviour independent of alerting. misapprehension about what monitoring was and whom it was for.
 
@@ -211,7 +211,7 @@ Run a Monthly Metrics Review (great idea)
 
 ## [Jessie Frazelle](https://twitter.com/jessfraz), Google - Everything is broken
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=333m21s)
+[Video](https://vimeo.com/173704265)
 
 Talked about problems with Software Engineering and Operations
 
@@ -219,7 +219,7 @@ Demonstrated how they monitored community and external maintainer PR statistics 
 
 ## [James Fryman](https://twitter.com/jfryman), Auth0 - Metrics are for Chumps - Understanding and overcoming the roadblocks to implementing instrumentation
 
-[Video](https://www.youtube.com/watch?v=vQBtun-Ein8&t=385m10s)
+[Video](https://vimeo.com/173704302)
 
 Story of implementation of instrumentation at Auth0
 
